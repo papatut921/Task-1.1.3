@@ -59,7 +59,7 @@ public class UserDaoJDBCImpl implements UserDao {
     public void removeUserById(long id) {
         try (PreparedStatement stmt = connection.prepareStatement(DELETE_USERS)) {
             stmt.setLong(1, id);
-            stmt.executeUpdate(DELETE_USERS);
+            stmt.executeUpdate();
             System.out.println("User с id " + id + "удален из базы данных");
         }
         catch (SQLException e) {
